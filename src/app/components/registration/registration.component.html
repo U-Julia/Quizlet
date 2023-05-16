@@ -1,0 +1,45 @@
+<div class="page-content">
+  <div class="form-content">
+    <h2>Create an account</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div>
+        <input type="text" pInputText class="form-control" formControlName="name" id="name" placeholder="Name*"/>
+        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <p-message severity="error" text="This field is required"></p-message>
+        </div>
+      </div>
+
+      <div>
+        <input type="email" pInputText class="form-control" formControlName="email" id="email" placeholder="Email*"/>
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <p-message severity="error" text="This field is required"></p-message>
+        </div>
+      </div>
+
+      <div>
+        <input type="tel" pInputText class="form-control" formControlName="phoneNumber" id="phoneNumber"
+               placeholder="Phone"/>
+      </div>
+
+      <div>
+        <input type="password" pInputText class="form-control" formControlName="password" id="password"
+               placeholder="Password*"/>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+          <p-message severity="error" text="This field is required"></p-message>
+        </div>
+      </div>
+
+      <button
+        pButton pRipple
+        type="subtim"
+        class="btn"
+        [disabled]="form.invalid"
+      > Create
+      </button>
+        <p-toast key="bc" position="bottom-center"></p-toast>
+    </form>
+
+  </div>
+</div>

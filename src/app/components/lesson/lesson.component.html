@@ -1,0 +1,51 @@
+<div class="page-container">
+  <div class="count">
+    <span> {{module?.title}} </span>
+    <span> {{index + 1}}/{{module?.terms.length}} </span>
+  </div>
+
+  <div>
+    <span class="term">{{currentTerm?.term}}</span>
+  </div>
+  <div class="input-field">
+    <textarea rows="8" id="str" cols="91" pInputTextarea [(ngModel)]="inputText" (ngModelChange)="showTranslationStatus = false" [autoResize]="true"></textarea>
+  </div>
+
+  <div class="buttons">
+    <button pButton pRipple
+            type="button"
+            label="Back"
+            class="btn"
+            (click)="goBack()"
+    >
+    </button>
+
+    <button pButton pRipple
+            type="button"
+            label="Next"
+            class="btn"
+            (click)="goNext()"
+            *ngIf="showTranslationStatus"
+    >
+    </button>
+
+    <button pButton pRipple
+            type="button"
+            label="Check"
+            class="btn"
+            (click)="check()"
+            [disabled]="!inputText?.length"
+            *ngIf="!showTranslationStatus"
+    >
+    </button>
+  </div>
+
+  <div
+    [ngClass]="{
+    'message': translationStatus,
+    'error-message': !translationStatus
+    }"
+    *ngIf="showTranslationStatus">
+    <span> {{translationStatus ? 'Excellent!' : 'Correct answer: ' + currentTerm.translation}} </span>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="page-container-languages">
+  <form [formGroup]="form">
+
+    <div formArrayName="languages">
+      <ng-container *ngFor="let language of languages.controls; let i = index">
+        <div [formGroupName]="i">
+          <div class="language">
+            <input
+              type="text"
+              pInputText
+              formControlName="learningLanguage"
+              id="learningLanguage"
+              class="input-language">
+            <input
+              type="text"
+              pInputText
+              formControlName="nativeLanguage"
+              id="nativeLanguage"
+              class="input-language">
+            <button
+              pButton pRipple
+              type="button"
+              icon="pi pi-trash"
+              class="delete-btn"
+              (click)="deleteLanguage(i)"
+            >
+            </button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </form>
+
+  <button
+    pButton pRipple
+    type="button"
+    class="add-btn"
+    (click)="addLanguages()"
+  > Add a language
+  </button>
+</div>

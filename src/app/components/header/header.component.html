@@ -1,0 +1,45 @@
+<div class="header">
+  <nav>
+    <div>
+      <p-overlayPanel #op>
+        <ng-template pTemplate>
+          <app-login></app-login>
+        </ng-template>
+      </p-overlayPanel>
+
+      <button
+        pButton pRipple
+        type="button"
+        class="login-btn"
+        (click)="op.toggle($event)">
+        Sign in
+      </button>
+      <!--      <button>-->
+      <!--      <div-->
+      <!--        pButton pRipple-->
+      <!--        type="button"-->
+      <!--        class="lang-btn">-->
+      <!--        <a routerLink="/language">Language</a>-->
+      <!--      </div>-->
+      <p-overlayPanel #op [showCloseIcon]="true" [style]="{width: '450px'}">
+        <ng-template pTemplate>
+        </ng-template>
+      </p-overlayPanel>
+      <button
+        pButton pRipple
+        type="button"
+        class="lang-btn"
+        (click)="navigateToRegistration()">
+        Registration
+      </button>
+
+      <button
+        pButton pRipple
+        type="button"
+        class="home-btn"
+        (click)="navigateToHome()">
+        Home
+      </button>
+    </div>
+  </nav>
+</div>

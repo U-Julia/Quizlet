@@ -1,0 +1,70 @@
+<div class="page-container">
+
+  <form [formGroup]="form">
+    <input
+      type="text"
+      pInputText
+      placeholder="Name"
+      formControlName="title"
+      class="input-moduleName">
+    <div *ngIf="form.get('title')?.invalid && (form.get('title')?.dirty || form.get('title')?.touched)"
+         class="alert alert-danger">
+      <p-message severity="error" text="Name is required"></p-message>
+    </div>
+
+    <div formArrayName="terms">
+      <ng-container *ngFor="let term of terms.controls; let i = index">
+        <div [formGroupName]="i">
+          <div class="term">
+            <input
+              type="text"
+              pInputText
+              formControlName="term"
+              class="input-term"
+              id="term"
+              placeholder="Term"
+            >
+
+            <input
+              type="text"
+              pInputText
+              formControlName="translation"
+              class="input-translate"
+              placeholder="Translation">
+
+            <button
+              pButton pRipple
+              type="button"
+              icon="pi pi-trash"
+              class="delete-btn"
+              [disabled]="terms.length < 2"
+              (click)="deleteTerm(i)">
+            </button>
+          </div>
+
+          <div *ngIf="(term.get('term')?.invalid && (term.get('term')?.dirty || term.get('term')?.touched))
+           || (term.get('translation')?.invalid && (term.get('translation')?.dirty || term.get('translation')?.touched))">
+            <p-message severity="error" text="Term is required"></p-message>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </form>
+
+  <div class="create-btns">
+    <button
+      pButton pRipple
+      class="add-btn"
+      (click)="addTerm()"
+    > +
+    </button>
+    <button
+      pButton pRipple
+      type="button"
+      class="add-btn"
+      [disabled]="!terms.length || form.invalid "
+      (click)="createModule()"
+    > Save
+    </button>
+  </div>
+</div>

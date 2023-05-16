@@ -1,0 +1,59 @@
+<div class="page-content-container">
+
+  <div class="buttons-container">
+    <div
+      pButton pRipple
+      type="button"
+      icon="pi pi-plus"
+      label="Create"
+      class="buttons"
+      (click)="createModule()"
+    >
+    </div>
+    <button
+      pButton pRipple
+      type="button"
+      icon="pi pi-pencil"
+      class="buttons"
+      label="Edit"
+      [disabled]="!selectedModule"
+      (click)="editModule(selectedModule.id)"
+    >
+    </button>
+    <button
+      pButton pRipple
+      type="button"
+      icon="pi pi-trash"
+      class="buttons"
+      label="Delete"
+      [disabled]="!selectedModule"
+      (click)="deleteModule()"
+    >
+    </button>
+  <button
+    pButton pRipple
+    type="button"
+    icon="pi pi-chevron-right"
+    class="buttons"
+    label="Study"
+    [disabled]="!selectedModule"
+    (click)="navigateToLesson(selectedModule.id)"
+  >
+  </button>
+</div>
+
+<div class="modules-container">
+  <div
+    class="module"
+    [class.selected]="selectedModule === module"
+    *ngFor="let module of modules"
+    (click)="selectModule(module)"
+  >
+    <span> Tittle: {{module.title}} </span>
+    <span> Terms: {{module.terms.length}} </span>
+  </div>
+</div>
+</div>
+
+<!--(click)="navigateToLesson(module.id)"-->
+

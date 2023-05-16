@@ -1,0 +1,33 @@
+.page-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: "Times New Roman";
+}
+
+.form-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-control {
+  border: none;
+  background: #f1f1f1;
+  width: 300px;
+  transition: .3s border-color;
+  margin: 15px 0;
+  color: black;
+}
+
+.btn {
+  display: block;
+  background-color: #307A59;
+  color: white;
+  margin: 15px 0;
+  width: 300px;
+  font-size: 20px;
+  font-family: "Times New Roman";
+  text-align: center;
+}

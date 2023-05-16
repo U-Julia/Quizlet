@@ -1,0 +1,40 @@
+<div class="container-login-form">
+  <h4>Login Form</h4>
+  <div class="login-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="form-control">
+        <input type="email" pInputText formControlName="email" id="email" placeholder="Email"/>
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <div *ngIf="email.errors['required']">
+            <p-message class="error message" severity="error" text="Email is required"></p-message>
+          </div>
+          <div *ngIf="email.errors['email']">
+            <p-message class="error message" severity="error" text="Wrong email"></p-message>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <input type="password" pInputText formControlName="password" id="password"
+               placeholder="Password"/>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+          <div *ngIf="password?.errors['minlength']">
+            <p-message severity="error" text="Enter min 5 characters"></p-message>
+          </div>
+          <div *ngIf="password?.errors['maxlength']">
+            <p-message severity="error" text="Enter max 10 characters"></p-message>
+          </div>
+        </div>
+      </div>
+
+      <button
+        pButton pRipple
+        type="submit"
+        class="btn-login"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>

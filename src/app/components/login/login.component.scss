@@ -1,0 +1,21 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  //text-align: center;
+  font-family: "Times New Roman";
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.btn-login {
+  background-color: #307A59;
+  color: white;
+  font-family: "Times New Roman";
+}
+
+.error-message {
+  display: flex;
+  margin-left: 0;
+}

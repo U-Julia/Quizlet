@@ -1,0 +1,76 @@
+.page-container {
+  width: 100%;
+  height: 86vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  font-family: "Times New Roman";
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  background-color: #EBF2EF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #307A59;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.term {
+  font-size: 40px;
+}
+
+.btn {
+  width: 150px;
+  height: 40px;
+  background-color: #307A59;
+  color: white;
+  font-size: 20px;
+  font-family: "Times New Roman";
+}
+
+.message {
+  width: 100%;
+  height: 80px;
+  background-color: #EBF2EF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #307A59;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+}
+
+.error-message {
+  width: 100%;
+  height: 80px;
+  background-color: #f6cad0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkred;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+}
+
+.input-field {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 705px;
+}

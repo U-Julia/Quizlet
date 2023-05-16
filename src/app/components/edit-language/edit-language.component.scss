@@ -1,0 +1,35 @@
+.page-container-languages {
+  margin: 30px;
+}
+
+.language {
+  display: flex;
+  width: 50%;
+  height: 50px;
+  border: 2px solid #307A59;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+  margin: 30px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.input-language {
+  width: 48%;
+  margin-left: 5px;
+}
+
+.delete-btn {
+  height: 80%;
+  margin: 0 2px 0 2px;
+  float: right;
+  background-color: #307A59;
+}
+
+.add-btn {
+ background-color: #307A59;
+  font-size: 20px;
+  color: white;
+  font-family: "Times New Roman";
+}
